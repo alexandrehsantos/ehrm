@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: alexandre
+Build-Jdk: 9.0.4
+Implementation-Title: easyhumanresouce
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: br.com.ehrm
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/ehrm
+Created-By: Maven Integration for Eclipse
+

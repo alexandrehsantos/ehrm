@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Easy human resource management</h1>
+	<form action="#" th:action="@{/signinsite}" th:object="${signInVO}" method="post" >
+		<p>Nome do Site de Sua Empresa: www. <input type="text" th:field="*{siteName}"/> ... </p>
+		<p>Usuario: <input type="text" th:field="*{userName}"/></p>
+		<p>Senha: <input type="text" th:field="*{password}"/></p>
+		<p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+	</form>
+	
+</body>
+</html>
