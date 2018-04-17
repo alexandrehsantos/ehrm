@@ -32,8 +32,10 @@ public class SignInSiteController {
 			RedirectAttributes redirectAttributes) {
 
 		ddlUtil.createDataBase(signInVO.getSiteName());
-
+		model.addAttribute("signInVO", signInVO);
+		
 		redirectAttributes.addAttribute("context", signInVO.getSiteName());
+		redirectAttributes.addFlashAttribute("signInVO",signInVO);
 		RedirectView redirectView = new RedirectView();
 		redirectView.setContextRelative(true);
 		redirectView.setUrl("/panel/{context}");

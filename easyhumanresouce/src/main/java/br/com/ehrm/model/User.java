@@ -2,16 +2,23 @@ package br.com.ehrm.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class Users.
  */
-public class Users implements Serializable {
+@Entity
+public class User implements Serializable {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -4942392603677035474L;
 
 	/** The id. */
+	@Id
+	@GeneratedValue
 	private Long id;
 
 	/** The name. */
@@ -125,9 +132,9 @@ public class Users implements Serializable {
 			return true;
 		if (obj == null)
 			return false;
-		if (!(obj instanceof Users))
+		if (!(obj instanceof User))
 			return false;
-		Users other = (Users) obj;
+		User other = (User) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
