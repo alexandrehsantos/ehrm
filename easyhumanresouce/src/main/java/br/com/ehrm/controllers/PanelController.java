@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class PanelController {
 
-	@RequestMapping(value = "/panel/{}")
+	@RequestMapping(value = "/panel/{context}")
 	public String showPanel(Model model) {
 		return "systempages/panel";
 	}

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import br.com.ehrm.utils.DDLUtil;
@@ -27,14 +28,17 @@ public class SignInSiteController {
 	}
 
 	@PostMapping("/signinsite")
-	public String signSiteSubmit(@ModelAttribute("signInVO") SignInVO signInVO, Model model) {
+	public RedirectView signSiteSubmit(@ModelAttribute("signInVO") SignInVO signInVO, Model model,
+			RedirectAttributes redirectAttributes) {
 
 		ddlUtil.createDataBase(signInVO.getSiteName());
 
+		redirectAttributes.addAttribute("context", signInVO.getSiteName());
 		RedirectView redirectView = new RedirectView();
-		redirectView.setUrl("panel");
+		redirectView.setContextRelative(true);
+		redirectView.setUrl("/panel/{context}");
 
-		return "redirect:/panel";
+		return redirectView;
 	}
 
 }
