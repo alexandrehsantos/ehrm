@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"></meta>
 <title>Insert title here</title>
 </head>
 <body>
 	<h1>Easy human resource management</h1>
-	<form action="#" th:action="@{/signinsite}" th:object="${signInVO}" method="post" >
-		<p> Crie o perfil de sua empresa de forma simples e rápida</p>
-		<p>Digite o nome do site de sua empresa: www. <input type="text" th:field="*{siteName}"/> ... </p>
-		<p> Adicione pelo menos uma conta, ela será o usuário principal do sistema ;).
-		<p>E-mail: <input type="text" th:field="*{userName}"/></p>
-		<p>Senha: <input type="password" th:field="*{password}"/></p>
-		<p><input type="submit" value="Começar a utilizar o sistema"/> <input type="reset" value="Cancelar"/></p>
+	<form action="#" th:action="@{/signinsite}" th:object="${signInVO}" method="post">
+		<p>Crie o perfil de sua empresa de forma simples e rápida</p>
+		<p>
+			Digite o nome do site de sua empresa: www. <input type="text" th:field="*{siteName}" /> ...
+		</p>
+		<p>Adicione pelo menos uma conta, ela será o usuário principal do sistema ;).</p>
+		<p>
+			E-mail: <input type="text" th:field="*{userName}" />
+		</p>
+		<p>
+			Senha: <input type="password" th:field="*{password}" />
+		</p>
+		<p>
+			<input type="submit" value="Começar a utilizar o sistema" /> <input type="reset"
+				value="Cancelar" />
+		</p>
 	</form>
-	
+
 </body>
 </html>

@@ -4,7 +4,9 @@ import org.hibernate.context.spi.CurrentTenantIdentifierResolver;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
-import static br.com.ehrm.multitenant.MultiTenantConstants.*;
+
+import static br.com.ehrm.multitenant.MultiTenantConstants.CURRENT_TENANT_IDENTIFIER;
+import static br.com.ehrm.multitenant.MultiTenantConstants.DEFAULT_TENANT_ID;
 
 @Component
 public class TenantIdentifierResolver implements CurrentTenantIdentifierResolver {

@@ -8,7 +8,7 @@ import java.util.Map;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import org.springframework.stereotype.Component;
@@ -16,9 +16,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class TenantDataSource implements Serializable {
 
-    private HashMap<String, DataSource> dataSources = new HashMap<>();
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4086454631591086899L;
 
-    @Autowired
+	private HashMap<String, DataSource> dataSources = new HashMap<>();
+
+    
     private DataSourceConfigRepository configRepo;
 
     public DataSource getDataSource(String name) {
@@ -33,7 +38,7 @@ public class TenantDataSource implements Serializable {
     }
 
     public Map<String, DataSource> getAll() {
-        List<DataSourceConfig> configList = configRepo.findAll();
+        List<DataSourceConfig> configList = (List<DataSourceConfig>) configRepo.findAll();
         Map<String, DataSource> result = new HashMap<>();
         for (DataSourceConfig config : configList) {
             DataSource dataSource = getDataSource(config.getName());

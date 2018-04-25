@@ -10,7 +10,7 @@ import javax.persistence.Id;
 /**
  * The Class Users.
  */
-@Entity
+@Entity(name="USERS")
 public class User implements Serializable {
 
 	/** The Constant serialVersionUID. */
@@ -28,7 +28,7 @@ public class User implements Serializable {
 	private String password;
 
 	/** The enablad. */
-	private Boolean enablad;
+	private Boolean enabled;
 
 	/**
 	 * Gets the name.
@@ -73,8 +73,8 @@ public class User implements Serializable {
 	 *
 	 * @return the enablad
 	 */
-	public Boolean getEnablad() {
-		return enablad;
+	public Boolean getEnabled() {
+		return enabled;
 	}
 
 	/**
@@ -83,8 +83,8 @@ public class User implements Serializable {
 	 * @param enablad
 	 *            the enablad to set
 	 */
-	public void setEnablad(Boolean enablad) {
-		this.enablad = enablad;
+	public void setEnabled(Boolean enablad) {
+		this.enabled = enablad;
 	}
 
 	/**

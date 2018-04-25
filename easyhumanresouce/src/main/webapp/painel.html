@@ -3,15 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+	<div>
+		<h1 class="page-header" th:text="${tenantid}">Tenant</h1>
+	</div>
+
 	<h1>Configuracoes</h1>
 
 	<form action="">
 		<p>Adicionar Novos Usuarios:</p>
-		<p>E-mail:<input type="text"/></p>
-		<p><input type="submit"/></p>
-		
+		<p>
+			E-mail:<input type="text" />
+		</p>
+		<p>
+			<input type="submit" />
+		</p>
+
 	</form>
 
 
